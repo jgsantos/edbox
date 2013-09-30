@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>EdBox Exemplos</title>
+		<link type="text/css" rel="stylesheet" href="../edbox.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="../src/edbox.js"></script>
+		<script >
+			jQuery(document).ready(function(){
+
+				edbox.color = "#fff"; 
+				edbox.applyBlock('.div-fieldset-box-complete');
+				edbox.applyBlock('.checkbox-div-mon-refs');
+				edbox.alertBox({ 
+					element : "body",
+					type    : 'error',
+					titulo  : 'Itinerário Atual',
+					texto   : 'Deseja deletar o itinerário atual?',
+					cancel: function(){
+					  edbox.closeBlock('body'); 
+					},
+					confirm: function(){}
+			    });
+			});
+		</script>
+    </head>
+    <body>
+
+
+    <body>
+ </html>
+
