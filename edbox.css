@@ -1,0 +1,101 @@
+.edbox-apply-relative{
+    position: relative;
+}
+
+.edbox-divlock{
+    z-index: 99999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.3;
+}
+.edbox-alert-box{
+    z-index: 999999;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+}
+
+.edbox-alert-success-inner{
+    background-color: #27ae60;
+    padding: 30px;
+    border-radius: 5px;
+    width: 400px;
+    border: 1px solid #2ecc71;
+    display: inline-block;
+}
+
+.edbox-alert-success-action a{
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #2ecc71;
+    border-radius: 5px;
+}
+
+.edbox-alert-success-action a:hover{
+    background-color:  #2ecc71;
+    cursor: pointer;
+    color: white;
+}
+
+.edbox-alert-alert-inner{
+    background-color: #f39c12;
+    padding: 30px;
+    border-radius: 5px;
+    width: 400px;
+    border: 1px solid #f1c40f;
+    display: inline-block;
+}
+
+.edbox-alert-alert-action a{
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #f1c40f;
+    border-radius: 5px;
+}
+
+.edbox-alert-alert-action a:hover{
+    background-color:  #f1c40f;
+    cursor: pointer;
+    color: white;
+}
+
+.edbox-alert-error-inner{
+    background-color: #c0392b;
+    padding: 30px;
+    border-radius: 5px;
+    width: 400px;
+    border: 1px solid #e74c3c;
+    display: inline-block;
+}
+
+.edbox-alert-error-action a{
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+}
+
+.edbox-alert-error-action a:hover{
+    background-color:  #e74c3c;
+    cursor: pointer;
+    color: white;
+}
+
+.edbox-alert-header{
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline;
+}
+.edbox-alert-message{
+    color: #f2f2f2;
+    font-family: verdana;
+    margin-top: 20px;
+}
+
+.edbox-alert-action{
+    color: #424242;
+    font-family: verdana;
+    margin-top: 30px;
+}
