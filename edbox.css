@@ -1,3 +1,31 @@
+.edbox-modal{}
+
+.edbox{
+    
+    display: none;
+    padding: 30px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    
+
+}
+
+.edbox .title{
+
+}
+
+.edbox .text{
+
+}
+
+.edbox .buttons{
+    text-align: center;
+}
+
+
+
+
 .edbox-apply-relative{
     position: relative;
 }
