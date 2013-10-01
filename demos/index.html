@@ -14,35 +14,36 @@
 					beforeOpen:function(){ 
 						console.log('antes de abrir');
 					},
-                                        type:'alert',
+					type:'alert',
+					backgroundColorModal: '#fff',
 					title:"EdBox Alert ",
 					text:"Esse é um teste para o EdBox tipo Alerta",
-					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}}]
+					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}},{name:"Fechar"},{name:"Fechar"},{name:"Fechar"},{name:"Fechar"}]
 				}),
 				
 				box2 = jQuery('body').edbox({
-                                        type:'success',
+					type:'success',
 					title:"EdBox Success",
 					text:"Esse é um teste para o EdBox tipo sucesso",
-                                        buttons:[{name:"Ok"}]
+					buttons:[{name:"Ok"}]
 				}),
                                 
-                                box3 = jQuery('body').edbox({
-                                        type:'error',
+				box3 = jQuery('body').edbox({
+					type:'error',
 					title:"EdBox Error",
 					text:"Esse é um teste para o EdBox tipo erro",
-                                        buttons:[{name:"Ok"}]
+					buttons:[{name:"Ok"}]
 				});
 				
 
 				box.open();
 				box2.open();
-                                box3.open();
+				box3.open();
 
 			});
 		</script>
     </head>
-    <body>
+    <body style="margin: 0; padding: 0">
     </body>
  </html>
 

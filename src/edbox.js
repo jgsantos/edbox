@@ -8,6 +8,7 @@
             type   : 'alert',
             title  : '',
             text   : '',
+			backgroundColorModal : '#fff',
             cancel: function(){},
             confirm: function(){},
             beforeOpen : function(){},
@@ -25,6 +26,7 @@
 
         _bindActions(edBoxInstance,settings);
         _createButtons( edBoxInstance, settings.buttons);
+		_centralizeElement(edBoxInstance);
         
         return  edBoxInstance;
     };
@@ -32,7 +34,7 @@
     //Private functions
     function _createElement( wrapElement, properties ){
 
-        var edBoxModal   = document.getElementById('edbox-modal') || wrapElement.append( _createElementModal() ),
+        var edBoxModal   = document.getElementById('edbox-modal') || wrapElement.append( _createElementModal(properties) ),
             edBoxElement = _createElementEdBox( properties );
 
             $(wrapElement).append( edBoxElement );
@@ -41,9 +43,10 @@
             return $(edBoxElement);
     };
 
-    function _createElementModal(){
+    function _createElementModal(properties){
         var elementModal =  document.createElement('div');
         elementModal.id = 'edbox-modal';
+		elementModal.style.backgroundColor = properties.backgroundColorModal;
         return elementModal; 
     }
 
@@ -84,6 +87,10 @@
                 function() {
                     $(this).css('display','inline-block');
                 });
+				
+			if(properties.modal	==true){
+				$('#edbox-modal').show();
+			}
 
             properties.afterOpen();
        };
@@ -101,6 +108,10 @@
                     $(this).css('display','none');
                 });
 
+			if(properties.modal	==true){
+				$('#edbox-modal').hide();
+			}
+			
             properties.afterClose();
        };
     }
@@ -123,8 +134,16 @@
 
                 
             };
-
-             
+    
     }
+	
+	function _centralizeElement( edBoxInstance ){
+ 
+		edBoxInstance.css({
+			'margin-left': -edBoxInstance.width() / 2,
+			'margin-top': -edBoxInstance.height() / 2
+		});
+		
+	 }
 
 })( jQuery );

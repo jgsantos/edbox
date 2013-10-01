@@ -1,4 +1,4 @@
-.edbox-modal{
+#edbox-modal{
     z-index: 99999;
     position: absolute;
     width: 100%;
@@ -8,14 +8,15 @@
 }
 
 .edbox{
-    
+    z-index: 99999;
+	position: absolute;
     display: none;
-    padding: 30px;
+    padding: 30px 100px 30px 100px;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
-    
-
+	top: 45%;
+	left: 45%;
 }
 
 .edbox .title{
@@ -23,17 +24,20 @@
     font-family: verdana;
     font-size: 20px;
     font-weight: bold;
-    
+	text-align: center;
 }
 
 .edbox .text{
     color: #f2f2f2;
     font-family: verdana;
     margin-top: 20px;
+	font-size: 11px;
+	text-align: center;
 }
 
 .edbox .buttons{
     text-align: center;
+	padding-top: 20px;
 }
 
 .edbox .button{
@@ -41,6 +45,7 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
+	color: #424242;
 }
 
 .edbox .button:hover{
@@ -60,6 +65,10 @@
     
 }
 
+.edbox.success .button:hover{
+    background-color: #2ecc71;   
+}
+
 .edbox.alert{
     background-color: #f39c12;
     border-color: #f1c40f;
@@ -71,6 +80,10 @@
     
 }
 
+.edbox.alert .button:hover{
+    background-color: #f1c40f;
+}
+
 .edbox.error{
     background-color: #c0392b;
     border-color: #e74c3c;
@@ -79,4 +92,8 @@
 .edbox.error .button{
     background-color: #c0392b;
     border-color: #e74c3c;
+}
+
+.edbox.error .button:hover{
+    background-color: #e74c3c;
 }
