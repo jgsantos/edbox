@@ -48,6 +48,7 @@
     }
 
     function _createElementEdBox( properties ){
+
         var edBox        = document.createElement('div'),
             edBoxTitle   = document.createElement('div'),
             edBoxText    = document.createElement('div'),
@@ -61,12 +62,9 @@
             edBoxTitle.innerHTML = properties.title;
             edBoxText.innerHTML = properties.text;
 
-           
-
             edBox.appendChild(edBoxTitle);
             edBox.appendChild(edBoxText);
             edBox.appendChild(edBoxButtons);
-
 
         return edBox;
     }
@@ -119,9 +117,6 @@
                 button.className = "button";
                 button.innerHTML = propertiesButton.name;
 
-                
-                console.log(edBoxInstance);
-                console.log(typeof edBoxInstance.close);
                 $(button).bind('click', propertiesButton.actionClick || edBoxInstance.close);
 
                 wrapButtons.append( button );
@@ -133,6 +128,3 @@
     }
 
 })( jQuery );
-
-
-
