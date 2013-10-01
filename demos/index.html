@@ -14,30 +14,35 @@
 					beforeOpen:function(){ 
 						console.log('antes de abrir');
 					},
-					title:"EdBox Teste 1",
-					text:"Esse é um teste para o EdBox 1",
+                                        type:'alert',
+					title:"EdBox Alert ",
+					text:"Esse é um teste para o EdBox tipo Alerta",
 					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}}]
 				}),
 				
 				box2 = jQuery('body').edbox({
-					title:"EdBox Teste 2",
-					text:"Esse é um teste para o EdBox 2"
+                                        type:'success',
+					title:"EdBox Success",
+					text:"Esse é um teste para o EdBox tipo sucesso",
+                                        buttons:[{name:"Ok"}]
+				}),
+                                
+                                box3 = jQuery('body').edbox({
+                                        type:'error',
+					title:"EdBox Error",
+					text:"Esse é um teste para o EdBox tipo erro",
+                                        buttons:[{name:"Ok"}]
 				});
 				
 
 				box.open();
 				box2.open();
+                                box3.open();
 
 			});
 		</script>
     </head>
     <body>
-    	<div id="testeID"></div>
-    	<div id="testeID"></div>
-    	<div class="testeID"></div>
-    	<div class="testeID"></div>
-    	<div class="testeID"></div>
-
-    <body>
+    </body>
  </html>
 
