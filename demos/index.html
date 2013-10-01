@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>EdBox Exemplos</title>
+		<link type="text/css" rel="stylesheet" href="../edbox.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="../src/edbox.js"></script>
+		<script >
+			jQuery(document).ready(function(){
+
+				var box = jQuery('body').edbox({
+					beforeOpen:function(){ 
+						console.log('antes de abrir');
+					},
+                                        type:'alert',
+					title:"EdBox Alert ",
+					text:"Esse é um teste para o EdBox tipo Alerta",
+					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}}]
+				}),
+				
+				box2 = jQuery('body').edbox({
+                                        type:'success',
+					title:"EdBox Success",
+					text:"Esse é um teste para o EdBox tipo sucesso",
+                                        buttons:[{name:"Ok"}]
+				}),
+                                
+                                box3 = jQuery('body').edbox({
+                                        type:'error',
+					title:"EdBox Error",
+					text:"Esse é um teste para o EdBox tipo erro",
+                                        buttons:[{name:"Ok"}]
+				});
+				
+
+				box.open();
+				box2.open();
+                                box3.open();
+
+			});
+		</script>
+    </head>
+    <body>
+    </body>
+ </html>
+

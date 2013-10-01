@@ -1,8 +1,4 @@
-.edbox-apply-relative{
-    position: relative;
-}
-
-.edbox-divlock{
+.edbox-modal{
     z-index: 99999;
     position: absolute;
     width: 100%;
@@ -10,92 +6,77 @@
     top: 0;
     opacity: 0.3;
 }
-.edbox-alert-box{
-    z-index: 999999;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 45%;
-}
 
-.edbox-alert-success-inner{
-    background-color: #27ae60;
+.edbox{
+    
+    display: none;
     padding: 30px;
     border-radius: 5px;
-    width: 400px;
-    border: 1px solid #2ecc71;
-    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    
+
 }
 
-.edbox-alert-success-action a{
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #2ecc71;
-    border-radius: 5px;
-}
-
-.edbox-alert-success-action a:hover{
-    background-color:  #2ecc71;
-    cursor: pointer;
-    color: white;
-}
-
-.edbox-alert-alert-inner{
-    background-color: #f39c12;
-    padding: 30px;
-    border-radius: 5px;
-    width: 400px;
-    border: 1px solid #f1c40f;
-    display: inline-block;
-}
-
-.edbox-alert-alert-action a{
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #f1c40f;
-    border-radius: 5px;
-}
-
-.edbox-alert-alert-action a:hover{
-    background-color:  #f1c40f;
-    cursor: pointer;
-    color: white;
-}
-
-.edbox-alert-error-inner{
-    background-color: #c0392b;
-    padding: 30px;
-    border-radius: 5px;
-    width: 400px;
-    border: 1px solid #e74c3c;
-    display: inline-block;
-}
-
-.edbox-alert-error-action a{
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #e74c3c;
-    border-radius: 5px;
-}
-
-.edbox-alert-error-action a:hover{
-    background-color:  #e74c3c;
-    cursor: pointer;
-    color: white;
-}
-
-.edbox-alert-header{
+.edbox .title{
     color: white;
     font-family: verdana;
     font-size: 20px;
     font-weight: bold;
-    display: inline;
+    
 }
-.edbox-alert-message{
+
+.edbox .text{
     color: #f2f2f2;
     font-family: verdana;
     margin-top: 20px;
 }
 
-.edbox-alert-action{
-    color: #424242;
-    font-family: verdana;
-    margin-top: 30px;
+.edbox .buttons{
+    text-align: center;
+}
+
+.edbox .button{
+    padding: 10px 20px 10px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.edbox .button:hover{
+    
+    cursor: pointer;
+    color: white;
+}
+
+
+.edbox.success{
+    background-color: #27ae60;
+    border-color: #2ecc71;
+}
+.edbox.success .button{
+    background-color: #27ae60;
+    border-color: #2ecc71;
+    
+}
+
+.edbox.alert{
+    background-color: #f39c12;
+    border-color: #f1c40f;
+}
+
+.edbox.alert .button{
+    background-color: #f39c12;
+    border-color: #f1c40f;
+    
+}
+
+.edbox.error{
+    background-color: #c0392b;
+    border-color: #e74c3c;
+}
+
+.edbox.error .button{
+    background-color: #c0392b;
+    border-color: #e74c3c;
 }
