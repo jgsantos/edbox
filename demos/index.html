@@ -10,24 +10,33 @@
 		<script >
 			jQuery(document).ready(function(){
 
-				edbox.color = "#fff"; 
-				edbox.applyBlock('.div-fieldset-box-complete');
-				edbox.applyBlock('.checkbox-div-mon-refs');
-				edbox.alertBox({ 
-					element : "body",
-					type    : 'error',
-					titulo  : 'Itinerário Atual',
-					texto   : 'Deseja deletar o itinerário atual?',
-					cancel: function(){
-					  edbox.closeBlock('body'); 
+				var box = jQuery('body').edbox({
+					beforeOpen:function(){ 
+						console.log('antes de abrir');
 					},
-					confirm: function(){}
-			    });
+					title:"EdBox Teste 1",
+					text:"Esse é um teste para o EdBox 1",
+					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}}]
+				}),
+				
+				box2 = jQuery('body').edbox({
+					title:"EdBox Teste 2",
+					text:"Esse é um teste para o EdBox 2"
+				});
+				
+
+				box.open();
+				box2.open();
+
 			});
 		</script>
     </head>
     <body>
-
+    	<div id="testeID"></div>
+    	<div id="testeID"></div>
+    	<div class="testeID"></div>
+    	<div class="testeID"></div>
+    	<div class="testeID"></div>
 
     <body>
  </html>
