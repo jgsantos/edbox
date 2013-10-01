@@ -8,7 +8,7 @@
             type   : 'alert',
             title  : '',
             text   : '',
-			backgroundColorModal : '#fff',
+			backgroundColorModal : '#000',
             cancel: function(){},
             confirm: function(){},
             beforeOpen : function(){},
@@ -89,7 +89,14 @@
                 });
 				
 			if(properties.modal	==true){
-				$('#edbox-modal').show();
+				$('#edbox-modal').animate({
+                opacity: 0.8,
+                height: "fadeIn"
+                },
+                500,
+                function() {
+                    $(this).show();
+                });
 			}
 
             properties.afterOpen();
@@ -109,7 +116,14 @@
                 });
 
 			if(properties.modal	==true){
-				$('#edbox-modal').hide();
+				$('#edbox-modal').animate({
+                opacity: 0,
+                height: "fadeOut"
+                },
+                500,
+                function() {
+                    $(this).hide();
+                });
 			}
 			
             properties.afterClose();

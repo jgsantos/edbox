@@ -97,3 +97,17 @@
 .edbox.error .button:hover{
     background-color: #e74c3c;
 }
+
+.edbox.info{
+    background-color: #2980b9;
+    border-color: #3498db;
+}
+
+.edbox.info .button{
+    background-color: #2980b9;
+    border-color: #3498db;
+}
+
+.edbox.info .button:hover{
+    background-color: #3498db;
+}
