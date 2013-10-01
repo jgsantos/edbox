@@ -1,18 +1,13 @@
 edbox
 =====
 
-edbox.color = "#fff";
-edbox.applyBlock('.div-fieldset-box-complete');
-edbox.applyBlock('.checkbox-div-mon-refs');
-edbox.alertBox({
-	element: "body",
-	type: 'error',
-	titulo: 'Itiner·rio Atual',
-	texto: 'Deseja deletar o itiner·rio atual?',
-	cancel: function(){
-		edbox.closeBlock('body');
-	},
-	confirm: function(){
-		
-	}
-});
+	var box = jQuery('body').edbox({
+			beforeOpen:function(){ 
+				console.log('antes de abrir');
+			},
+                	type:'alert',
+			title:"EdBox Alert ",
+			text:"Esse √© um teste para o EdBox tipo Alerta",
+			buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('Alerta gerado pelo bot√£o')}}]
+		 }),
+	box.open();
