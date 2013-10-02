@@ -9,6 +9,7 @@
             title  : '',
             text   : '',
 			backgroundColorModal : '#000',
+            position: "center",
             cancel: function(){},
             confirm: function(){},
             beforeOpen : function(){},
@@ -16,17 +17,13 @@
             beforeClose:function(){},
             afterClose:function(){},
             buttons:[],
-        };
-
- 
-        var settings = $.extend( {}, defaults, options );
- 
-        
+        },
+        settings = $.extend( {}, defaults, options ),
         edBoxInstance = _createElement(this, settings);
 
-        _bindActions(edBoxInstance,settings);
-        _createButtons( edBoxInstance, settings.buttons);
-		_centralizeElement(edBoxInstance);
+        _bindActions( edBoxInstance,settings );
+        _createButtons( edBoxInstance, settings.buttons );
+		_toPositionBox( edBoxInstance, settings.position );
         
         return  edBoxInstance;
     };
@@ -128,6 +125,14 @@
 			
             properties.afterClose();
        };
+
+       edBoxInstance.setPosition = function( position ){
+            _toPositionBox( this, position );
+       };
+
+       edBoxInstance.setType    = function( type ){
+            this.removeClass().addClass("edbox").addClass( type );
+       };
     }
 
     function _createButtons( edBoxInstance, arrayButtons ){
@@ -151,13 +156,91 @@
     
     }
 	
-	function _centralizeElement( edBoxInstance ){
- 
-		edBoxInstance.css({
-			'margin-left': -edBoxInstance.width() / 2,
-			'margin-top': -edBoxInstance.height() / 2
-		});
-		
-	 }
+    function _toPositionBox( edBoxInstance, position){
+             
+            var positionBox = {};
+
+            switch( position ){
+                 
+                case "left-top" :
+                    positionBox = { 
+                        'top'   : 0,
+                        'left'  : 0,
+                        'margin': 0,
+                    };
+                break;
+                
+                case "left-center" :
+                    positionBox = { 
+                        'top'   : "45%",
+                        'left'  : 0,
+                        'margin-top': -edBoxInstance.height() / 2,
+                    }; 
+                break;
+
+                case "left-bottom":
+                    positionBox = { 
+                        'bottom': 0,
+                        'left'  : 0,
+                        'margin': 0,
+                    };
+
+                break;
+
+                case "center-top":
+                    positionBox = { 
+                        'top'   : 0,
+                        'left'  : "45%",
+                        'margin-left': -edBoxInstance.width() / 2,
+                    };
+                break;
+
+                case "center-bottom":
+                    positionBox = { 
+                        'bottom': 0,
+                        'left'  : "45%",
+                        'margin-left': -edBoxInstance.width() / 2,
+                    };
+                break;
+
+                case "right-top" :
+                    positionBox = { 
+                        'top'   : 0,
+                        'right' : 0,
+                        'margin': 0,
+                    };
+                break;
+
+                case "right-center" :
+
+                    positionBox = { 
+                        'top'   : "45%",
+                        'right' : 0,
+                        'margin-top': -edBoxInstance.height() / 2
+                    };
+
+                break;
+
+                case "right-bottom" :
+                    positionBox = { 
+                        'bottom': 0,
+                        'right' : 0,
+                        'margin': 0
+                    };
+
+                break;
+
+                default :
+                    positionBox = { 
+                        'top'   : "45%",
+                        'left'  : "45%",
+                        'margin-left': -edBoxInstance.width() / 2,
+                        'margin-top': -edBoxInstance.height() / 2
+                    };
+                break;
+            }
+
+            edBoxInstance.css( positionBox );
+     }
 
 })( jQuery );
