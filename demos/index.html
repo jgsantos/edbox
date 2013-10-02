@@ -10,46 +10,145 @@
 		<script >
 			jQuery(document).ready(function(){
 
-				var box = jQuery('body').edbox({
-					beforeOpen:function(){ 
-						console.log('antes de abrir');
-					},
-					type:'alert',
-					title:"EdBox Alert ",
-					text:"Esse é um teste para o EdBox tipo alert",
-					buttons:[{name:"Fechar"},{name:"Gerar Um alerta",actionClick:function(){alert('mlk')}},{name:"Fechar"},{name:"Fechar"},{name:"Fechar"},{name:"Fechar"}]
-				}),
+				var boxTypes = jQuery('body').edbox({
+											type    : 'alert',
+											title   : 'EdBox',
+											text    : "This is a example of the Edbox's types.",
+											buttons :[
+												
+												{
+													name:"Type Success",
+													actionClick : function(){
+														boxTypes.setType('success');
+													}
+
+												},
+												{
+													name:"Type Error",
+													actionClick : function(){
+														boxTypes.setType('error');
+													}
+
+												},
+												{
+													name:"Type Info",
+													actionClick : function(){
+														boxTypes.setType('info');
+													}
+
+												},
+												{
+													name:"Type Alert",
+													actionClick : function(){
+														boxTypes.setType('alert');
+													}
+
+												},
+												{
+													name:"Close"
+												}
+												],
+											afterClose:function(){
+													boxTypes.setType('alert');
+												}
+											});
 				
-				box2 = jQuery('body').edbox({
-					type:'success',
-					title:"EdBox Success",
-					text:"Esse é um teste para o EdBox tipo success",
-					buttons:[{name:"Ok"}]
-				}),
-                                
-				box3 = jQuery('body').edbox({
-					type:'error',
-					title:"EdBox Error",
-					text:"Esse é um teste para o EdBox tipo error",
-					buttons:[{name:"Ok"}]
-				});
+				var boxPositions = jQuery('body').edbox({
+											type    : 'success',
+											title   : 'EdBox',
+											text    : "This is a example of the Edbox's positions.",
+											buttons :[{
+														name:"Left Top",
+														actionClick : function(){
+															boxPositions.setPosition('left-top');
+														}
+													},
+													{
+														name:"Center Top",
+														actionClick : function(){
+															boxPositions.setPosition('center-top');
+														}
+													},
+													{
+														name:"Right Top",
+														actionClick : function(){
+															boxPositions.setPosition('right-top');
+														}
+													},
+													{
+														name:"Left Center",
+														actionClick : function(){
+															boxPositions.setPosition('left-center');
+														}
+													},
+													{
+														name:"Center",
+														actionClick : function(){
+															boxPositions.setPosition('center');
+														}
+													},
+													{
+														name:"Right Center",
+														actionClick : function(){
+															boxPositions.setPosition('right-center');
+														}
+													},
+													{
+														name:"Left Bottom",
+														actionClick : function(){
+															boxPositions.setPosition('left-bottom');
+														}
+													},
+													{
+														name:"Center Bottom",
+														actionClick : function(){
+															boxPositions.setPosition('center-bottom');
+														}
+													},
+													{
+														name:"Right Bottom",
+														actionClick : function(){
+															boxPositions.setPosition('right-bottom');
+														}
+													},
+													{
+														name:"Close"
+													}],
+												afterClose:function(){
+													boxPositions.setPosition('center');
+												}
+											});
+							var boxModal = jQuery('body').edbox({
+													modal   : false,
+													type    : 'info',
+													title   : 'EdBox',
+													text    : "This is a example of the Edbox no modal style.",
+													buttons :[{
+        												name:"Close"
+        											}]
+        										});
 				
-				box4 = jQuery('body').edbox({
-					type:'info',
-					title:"EdBox Error",
-					text:"Esse é um teste para o EdBox tipo info",
-					buttons:[{name:"Ok"}]
+				jQuery("#edboxTypes").click(function(){
+					boxTypes.open();
 				});
 
-				//box.open();
-				//box2.open();
-				//box3.open();
-				box4.open();
+				jQuery("#edboxPositions").click(function(){
+					boxPositions.open();
+				});
+
+				jQuery("#edboxModal").click(function(){
+					boxModal.open();
+				});
+
+				
 
 			});
 		</script>
     </head>
     <body style="margin: 0; padding: 0">
+    	<button id="edboxTypes"> EdBox's Types</button>
+    	<button id="edboxPositions"> EdBox's Positions</button>
+    	<button id="edboxModal"> EdBox no Modal Style</button>
     </body>
  </html>
 
