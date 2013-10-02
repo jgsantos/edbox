@@ -82,7 +82,8 @@
                 },
                 500,
                 function() {
-                    $(this).css('display','inline-block');
+                    $(this).removeClass('hide').addClass('show');
+                    properties.afterOpen();
                 });
 				
 			if(properties.modal	==true){
@@ -96,7 +97,7 @@
                 });
 			}
 
-            properties.afterOpen();
+            
        };
 
        edBoxInstance.close = function(){
@@ -109,10 +110,11 @@
                 },
                 500,
                 function() {
-                    $(this).css('display','none');
+                    $(this).removeClass('show').addClass('hide');
+                    properties.afterClose();
                 });
 
-			if(properties.modal	==true){
+			if(properties.modal	== true){
 				$('#edbox-modal').animate({
                 opacity: 0,
                 height: "fadeOut"
@@ -123,7 +125,7 @@
                 });
 			}
 			
-            properties.afterClose();
+            
        };
 
        edBoxInstance.setPosition = function( position ){
@@ -131,7 +133,9 @@
        };
 
        edBoxInstance.setType    = function( type ){
-            this.removeClass().addClass("edbox").addClass( type );
+
+            var classShowHide = this.hasClass('show') ? 'show' : 'hide'; 
+            this.removeClass().addClass("edbox").addClass( type ).addClass( classShowHide );
        };
     }
 
@@ -239,7 +243,7 @@
                     };
                 break;
             }
-
+            edBoxInstance.removeAttr('style');
             edBoxInstance.css( positionBox );
      }
 
