@@ -5,6 +5,7 @@
     height: 100%;
     top: 0;
     opacity: 0.3;
+    display: none;
 }
 
 .edbox{
@@ -37,6 +38,7 @@
 .edbox .buttons{
     text-align: center;
 	padding-top: 15px;
+    max-width: 400px;
 }
 
 .edbox .button{
@@ -110,4 +112,12 @@
 
 .edbox.info .button:hover{
     background-color: #3498db;
+}
+
+.edbox.show{
+    display: inline-block;
+};
+
+.edbox.hide{
+    display: none;
 }
